@@ -1,3 +1,5 @@
+I added stuff.
+
 # Aternos On Discord 
 [![Build Status](https://travis-ci.com/Mekolaos/JackADit.svg?branch=master)](https://travis-ci.com/Mekolaos/JackADit)
 
