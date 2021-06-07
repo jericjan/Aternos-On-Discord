@@ -1,4 +1,7 @@
 I added stuff.
+- replaced chromedriver with undetected_chromedriver
+- replaced the xpath of get_status() with an updated one
+- added `--no-sandbox` as an argument for the webdriver (i don't even think this was needed)
 
 # Aternos On Discord 
 [![Build Status](https://travis-ci.com/Mekolaos/JackADit.svg?branch=master)](https://travis-ci.com/Mekolaos/JackADit)
