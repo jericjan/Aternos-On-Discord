@@ -3,7 +3,8 @@ import time
 import os
 import logging
 
-from selenium import webdriver
+#from selenium import webdriver
+import undetected_chromedriver as webdriver
 from selenium.common.exceptions import ElementNotInteractableException, \
                                        NoSuchElementException
 from dotenv import load_dotenv
@@ -16,7 +17,7 @@ URL = "https://aternos.org/go/"
 
 # chrome variables
 adblock = False  # for those with network wide ad blockers
-headless = True  # if you want a headless window
+headless = False  # if you want a headless window
 
 options = webdriver.ChromeOptions()
 if headless:
@@ -24,6 +25,8 @@ if headless:
 options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                      "AppleWebKit/537.36 (KHTML, like Gecko) "
                      "Chrome/87.0.4280.88 Safari/537.36")
+options.add_argument('--no-sandbox')                     
+                     
 
 driver = webdriver.Chrome(options=options, executable_path=binary_path)
 
@@ -50,9 +53,7 @@ async def start_server():
 
 def get_status():
     """ Returns the status of the server as a string."""
-    return driver.find_element_by_xpath('//*[@id="nope"]/main/section/div['
-                                        '3]/div[3]/div[1]/div/span['
-                                        '2]/span').text
+    return driver.find_element_by_xpath('//*[@id="read-our-tos"]/main/section/div[3]/div[3]/div[1]/div/span[2]/span').text
 
 
 def get_number_of_players():
